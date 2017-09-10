@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['skynet1-0.herokuapp.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
