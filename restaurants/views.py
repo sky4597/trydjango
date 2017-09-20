@@ -5,6 +5,7 @@ import random
 
 from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView
+from .forms import RestaurantCreateForm
 
 from .models import RestaurantLocation
 
@@ -25,6 +26,13 @@ from .models import RestaurantLocation
 
 # 	"""
 # 	return HttpResponse(html_)
+
+
+def restaurant_createview(request):
+	template_name = 'restaurants/form.html'
+	context= {}
+
+	return render(request,template_name, context) 
 
 def restaurant_listview(request):
 	template_name = 'restaurants/restaurants_list.html'
