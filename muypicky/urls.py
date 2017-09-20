@@ -32,5 +32,6 @@ urlpatterns = [
     #url(r'^restaurants/asian/$', AsianFusionRestaurantListView.as_view()),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
     url(r'^game/$', TemplateView.as_view(template_name='game.html')),
+    url(r'^trip/$', TemplateView.as_view(template_name='trip.html')),
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html')),
 ]
