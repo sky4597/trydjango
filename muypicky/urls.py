@@ -1,5 +1,4 @@
 """muypicky URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
 Examples:
@@ -16,22 +15,21 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
+
 from restaurants.views import (
-    home,
-    restaurant_listview,
     RestaurantListView,
-    SearchRestaurantListView,
-    RestaurantDetailView
-    )
+    RestaurantDetailView,
+    restaurant_createview
+
+)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home),
+    url(r'^$', TemplateView.as_view(template_name='home.html')),
     url(r'^restaurants/$', RestaurantListView.as_view()),
+    url(r'^restaurants/create/$', restaurant_createview),
     url(r'^restaurants/(?P<slug>[\w-]+)/$', RestaurantDetailView.as_view()),
     #url(r'^restaurants/asian/$', AsianFusionRestaurantListView.as_view()),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
-    url(r'^game/$', TemplateView.as_view(template_name='game.html')),
-    url(r'^trip/$', TemplateView.as_view(template_name='trip.html')),
     url(r'^contact/$', TemplateView.as_view(template_name='contact.html')),
 ]
